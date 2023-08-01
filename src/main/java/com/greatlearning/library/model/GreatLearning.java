@@ -11,6 +11,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+//data tags covers 5 annotations, no need to have getter, setter, ToString
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,9 +19,14 @@ import lombok.ToString;
 @Builder
 public class GreatLearning {
 
+	//simple object
 	private String courseName;
 	private String courseType;
-	private String instructorName;
+	//private String instructorName;
+	//complex object
+	private FullName instructorName;
+	
+	
 	// 3 factorial constructors can be created for the given varibles. which 3*2=6
 	// constructors
 	// it's referred as telescpoing constructor design pattern
