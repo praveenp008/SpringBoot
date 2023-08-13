@@ -62,7 +62,7 @@ public class SpringBootLibraryDesignApplication implements CommandLineRunner {
 
 		// existServiceImplMethodsExecution();
 
-		deleteServiceImplMethodsExecution();
+		// deleteServiceImplMethodsExecution();
 
 	}
 
@@ -205,7 +205,7 @@ public class SpringBootLibraryDesignApplication implements CommandLineRunner {
 				libraryReadServiceImpl.getLibrariesCustomSortedByName(Direction.DESC));
 
 		log.info("Fetch libraries default paged sorted and with these books -> {} ", libraryReadServiceImpl
-				.getibrariesPageAndSortedWithTheseBooks("xyz, abc, efg").get().collect(Collectors.toList()));
+				.getLibrariesPageAndSortedWithTheseBooks("xyz, abc, efg").get().collect(Collectors.toList()));
 
 		log.info("Fetch libraries default paged and default sorted by name -> {}",
 				libraryReadServiceImpl.getLibrariesPageAndSortByName().get().collect(Collectors.toList()));
@@ -224,7 +224,7 @@ public class SpringBootLibraryDesignApplication implements CommandLineRunner {
 		log.info("Fetch list of lib by ids -> {}", libraryReadServiceImpl.getLibrariesByIds(ids));
 
 		long id = 12l;
-		Optional<Library> optionalLibrary = libraryReadServiceImpl.getLibrariesById(id);
+		Optional<Library> optionalLibrary = libraryReadServiceImpl.getALibraryById(id);
 		if (optionalLibrary.isPresent()) {
 			log.info("Fetch optional lib by id -> {}", optionalLibrary.get());
 		} else {

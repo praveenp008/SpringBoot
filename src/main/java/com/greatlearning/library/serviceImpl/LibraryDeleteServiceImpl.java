@@ -53,5 +53,7 @@ public class LibraryDeleteServiceImpl implements LibraryDeleteService {
 		libraryRepository.deleteInBatch(libraries);
 		return "Delete all the libraries in the list batch mode";
 	}
+	
+	
 
 }

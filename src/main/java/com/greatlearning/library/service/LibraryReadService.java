@@ -24,7 +24,7 @@ public interface LibraryReadService {
 
 	List<Library> getLibrariesCustomSortedByName(Direction direction);
 
-	Page<Library> getibrariesPageAndSortedWithTheseBooks(String commaSeperatedBookNames);
+	Page<Library> getLibrariesPageAndSortedWithTheseBooks(String commaSeperatedBookNames);
 
 	Page<Library> getLibrariesPageAndSortByName();
 
@@ -35,7 +35,7 @@ public interface LibraryReadService {
 
 	List<Library> getLibrariesByIds(List<Long> ids);
 
-	Optional<Library> getLibrariesById(Long id);
+	Optional<Library> getALibraryById(Long id);
 
 	Optional<Library> getLibrariesWithTheseBooks(String commaSeperatedBookNames);
 

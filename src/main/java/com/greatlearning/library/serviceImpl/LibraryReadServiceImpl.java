@@ -75,7 +75,7 @@ public class LibraryReadServiceImpl implements LibraryReadService {
 	}
 
 	@Override
-	public Page<Library> getibrariesPageAndSortedWithTheseBooks(String commaSeperatedBookNames) {
+	public Page<Library> getLibrariesPageAndSortedWithTheseBooks(String commaSeperatedBookNames) {
 
 		Library libraryWithTheseBooks = new Library();
 		libraryWithTheseBooks.setCommaSeperatedBooknames(commaSeperatedBookNames);
@@ -90,7 +90,7 @@ public class LibraryReadServiceImpl implements LibraryReadService {
 
 		Example<Library> example = Example.of(libraryWithTheseBooks, exampleMatcher);
 
-		PageRequest first3records = PageRequest.of(0, 1, Sort.by("name"));
+		PageRequest first3records = PageRequest.of(0, 3, Sort.by("name"));
 
 		return readRepository.findAll(example, first3records);
 	}
@@ -118,9 +118,9 @@ public class LibraryReadServiceImpl implements LibraryReadService {
 
 		Example<Library> example = Example.of(libraryWithTheseBooks, exampleMatcher);
 
-		PageRequest customePage = PageRequest.of(pageNumber, numberOfRecordsOnAPage, Sort.by("name"));
+		PageRequest customPage = PageRequest.of(pageNumber, numberOfRecordsOnAPage, Sort.by("name"));
 
-		return readRepository.findAll(example, customePage);
+		return readRepository.findAll(example, customPage);
 
 	}
 
@@ -151,7 +151,7 @@ public class LibraryReadServiceImpl implements LibraryReadService {
 	}
 
 	@Override
-	public Optional<Library> getLibrariesById(Long id) {
+	public Optional<Library> getALibraryById(Long id) {
 		return readRepository.findById(id);
 
 	}
@@ -167,8 +167,5 @@ public class LibraryReadServiceImpl implements LibraryReadService {
 		Example<Library> example = Example.of(libraryWithTheseBooks, exampleMatcher);
 		return readRepository.findOne(example);
 	}
-	
-	
-	
-	
+
 }
