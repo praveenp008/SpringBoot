@@ -18,6 +18,6 @@ public class Library {
 	@Id
 	private long id;
 	private String name;
-	private String commaSepearatedBooknames;
+	private String commaSeperatedBooknames;
 
 }
